@@ -1,0 +1,53 @@
+
+/*Logo bisschen nach unten, damit es nicht mit kante abschließt*/
+
+/* navigation styles start here*/
+header.header-white
+{
+	color: var(--color-1);
+	background-color: var(--color-2);
+}
+/*Logo Styling*/
+.logo-white{
+	background: var(--color-1);
+	color: var(--color-2);
+}
+/* logo Margin oft maßgebend für Höhe Header und Abstand Logo - Rest
+.logo 
+{
+	margin:0;
+}
+*/
+
+ /*3 Balken für mobiles Menü*/
+.nav-toggle-label-white span, 
+.nav-toggle-label-white span::before,
+.nav-toggle-label-white span::after 
+{
+	background: var(--color-1);
+}
+
+
+nav.nav-white
+{
+	background: var(--color-2);
+}
+
+nav.nav-white a 
+{
+	color: var(--color-1);;
+}
+
+nav.nav-white a:hover 
+{
+	color: var(--accent-color-1);
+}
+
+
+@media screen and (min-width: 800px) 
+{
+
+	nav.nav-white a::before {
+		background-color: var(--color-1);
+	}
+}

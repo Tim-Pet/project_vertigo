@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+
+
+*, *::before, *::after 
+{
+	box-sizing: border-box;
+}
+
+
+/* navigation styles start here*/
+#header-white, #header-black
+{
+	display: none;
+}
+header 
+{
+	background: var(--color-2);
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	z-index:1000;
+	/*color: var(--color-1);*/
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	top:0;
+	left:0;
+}
+/* logo Margin oft maßgebend für Höhe Header und Abstand Logo - Rest
+.logo 
+{
+	margin:0;
+}
+*/
+.nav-toggle-white, 
+.nav-toggle-black
+{
+	display: none;
+}
+
+.nav-toggle-label-white,
+.nav-toggle-label-black
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+ /*3 Balken für mobiles Menü*/
+.nav-toggle-label-white span, 
+.nav-toggle-label-white span::before,
+.nav-toggle-label-white span::after,
+.nav-toggle-label-black span, 
+.nav-toggle-label-black span::before,
+.nav-toggle-label-black span::after 
+{
+	display: block;
+	border: collapse;
+	/*background: var(--color-1);*/
+	height: 0.1em;
+	width: 2em;
+	border-radius: 2px;
+	position: relative;
+	content: '';
+}
+
+.nav-toggle-label-white span::before,
+.nav-toggle-label-white span::after,
+.nav-toggle-label-black span::before,
+.nav-toggle-label-black span::after 
+{
+	content: '';
+	position: absolute;
+}
+.nav-toggle-label-white span::before,
+.nav-toggle-label-black span::before
+{
+	bottom: 0.4em;
+}
+
+.nav-toggle-label-white span::after,
+.nav-toggle-label-black span::after
+{
+
+	top: 0.4em;
+}
+
+nav 
+{
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	/*background: var(--color-2);*/
+	width: 100%;
+	transform: scale(1,0); /*macht das Menü unsichtbar, minimiert es auf 0%*/
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
+}
+
+nav ul 
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li
+{
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+
+nav a 
+{
+	/*color: var(--color-1);*/
+	text-decoration: none;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+
+}
+
+/*nav a:hover 
+{
+	color: var(--accent-color-1);
+
+}*/
+
+.nav-toggle-white:checked ~ nav,
+.nav-toggle-black:checked ~ nav /* select the first nav element after the checkbox --> the nav bar with the list elements inside*/
+{
+	transform: scale(1,1); /*zieht das Menü wieder auf Normalgröße*/
+}
+
+
+@media screen and (min-width: 800px) 
+{
+	.nav-toggle-label-white,
+	.nav-toggle-label-black
+	{
+		display: none;
+	}
+
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto minmax(600px, 4fr) 1fr;
+	}
+	.logo-white,
+	.logo-black
+	{
+		grid-column: 2; /*Logo in auto column*/
+	}
+
+	nav {
+		all: unset; /*removes all stylings before media*/
+		grid-column: 3/4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	nav li{
+		margin-left: 3em;
+		margin-bottom: 0;
+	}
+
+	nav a {
+		opacity: 1;
+		position: relative;
+	}
+
+	nav a::before {
+		content:'';
+		display:block;
+		height: 2px;
+		/*background: var(--color-1);*/
+		position: absolute;
+		top: -0,25em;
+		left: 0;
+		right: 0;
+		transform: scale(0, 1);
+		transform-origin: left;
+		transition: transform ease-in-out 250ms;
+	}
+
+	nav a:hover::before,
+	nav a:focus::before {
+		transform: scale(1,1);
+	}
+}

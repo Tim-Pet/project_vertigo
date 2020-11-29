@@ -1,0 +1,193 @@
+/*
+    To-Do: 
+    1. Button Alignment ist je nach Format ungleich --> media-query?
+*/
+
+
+/*---------
+Background styling
+-----------*/
+
+.home-landing /*Randdaten --> Hintergrund anpassen (später rechte Seite)*/
+{
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    overflow: hidden;
+    position: absolute;
+
+
+}
+
+.home-left /*linke Hälfte Farben und Aufteilung*/
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: var(--lp-color-black);
+    background-color: var(--lp-color-white);
+    overflow: hidden;
+    transition: width 1s linear ;
+    z-index: 2;
+}
+
+.home-right /*rechte Hälfte Farben und Aufteilung*/
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lp-color-black);
+    color: var(--lp-color-white);
+    overflow: hidden;
+    z-index:0;
+}
+
+
+
+
+
+
+/*------------
+    Text
+---------------*/
+h1.home-text /*h1 styling*/
+{
+    position: absolute;
+    white-space: nowrap;
+    top: 25%;
+    left: 1vw;
+    font-weight: 900;
+    font-size: 11.1vw;
+    line-height: 150%;
+    overflow: hidden;
+    text-transform: uppercase;
+    word-spacing: -50%;
+
+}
+
+h1.home-text >div /*Subtext style*/
+{
+    bottom: 20%;
+    opacity: 0.2;
+    line-height: 110%;
+    font-size: 40%;
+    text-align: center;
+    letter-spacing: normal;
+    transition: text-indent ease-in-out 1s, opacity linear 0.75s;
+    word-spacing: normal;
+}
+
+.home-subtext-left
+{
+    text-indent: -50%;
+}
+
+.home-subtext-right
+{
+    text-indent: 50%;
+}
+
+
+
+
+
+
+
+/*-------------
+    Buttons
+---------------*/
+.button-black,
+.button-white
+{
+    position: absolute;
+    padding: 1.8vw 1.8vw;
+    font-size: 200%;
+    top: 80%;
+    opacity: 1;
+    transition: opacity 1s, transform ease-in-out 1s;
+}
+
+.button-white 
+{
+    left: 15vw ;
+}
+
+.button-black 
+{
+    left: 65vw    ;
+}
+
+
+
+
+
+
+
+
+/*------------
+    Animations
+---------------*/
+/*color switch*/
+#home-left:hover
+{
+    width: 93%;
+
+}
+
+.home-landing:hover > div:first-child
+{
+    width: 8.2%;
+}
+
+/*center subtext on hover*/
+#home-left:hover h1 .home-subtext-left
+{
+    text-indent: 0;
+    opacity: 1;
+}
+
+.home-right:hover h1 .home-subtext-right
+{
+    text-indent: 0;
+    opacity:1;
+}
+
+/*---- 
+fade opposite subtext & button out
+----*/
+
+/*Buttons*/
+/*left area - opacity 1 for left button, but 0 for right*/
+#home-left:hover + .home-right .button-black
+{
+    opacity: 0;
+    transform: translateX(0);
+}
+
+#home-left:hover .button-white
+{
+    opacity: 1;
+    transform: translateX(25vw);
+}
+
+
+/*right area - opacity 0 for left button*/
+.home-landing:hover > div .button-white
+{
+    opacity: 0;
+}
+.home-landing:hover div .button-black
+{
+    transform: translateX(-25vw);
+}
+
+/*subtexts*/
+#home-left:hover + .home-right .home-text .home-subtext-right
+{
+    opacity: 0;
+}
+.home-landing:hover > div h1 div.home-subtext-left
+{
+    opacity: 0;
+}

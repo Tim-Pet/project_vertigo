@@ -1,0 +1,46 @@
+
+/* navigation styles start here*/
+header 
+{
+	color: var(--color-2);
+	background-color: var(--color-1);
+}
+/* logo Margin oft maßgebend für Höhe Header und Abstand Logo - Rest
+.logo 
+{
+	margin:0;
+}
+*/
+
+ /*3 Balken für mobiles Menü*/
+.nav-toggle-label-black span, 
+.nav-toggle-label-black span::before,
+.nav-toggle-label-black span::after 
+{
+	background: var(--color-2);
+}
+
+nav.nav-black
+{
+	background: var(--color-1);
+}
+
+ nav.nav-black a 
+{
+	color: var(--color-2);;
+}
+
+nav.nav-black a:hover 
+{
+	color: var(--accent-color-1);
+}
+
+
+@media screen and (min-width: 800px) 
+{
+
+	nav.nav-black a::before {
+		background: var(--color-2);
+	}
+
+}

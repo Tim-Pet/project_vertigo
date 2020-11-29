@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+/*===================
+        basics
+====================*/
+*
+{
+    margin:0;
+    padding: 0;
+}
+
+body
+{
+    font-family: "work sans";
+}
+
+
+
+
+
+
+
+
+
+
+/*===================
+        buttons
+====================*/
+
+/*--------------------
+Button hover border
+----------------------*/
+
+/*both*/
+.button-black,
+.button-white
+{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/*legt eine weiße Box hinter den Text und vor die Border box, die nicht so hoch ist wie die Border box, aber breiter*/
+.button-black:before,
+.button-white:before
+{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -5px;
+    right: -2px;
+    height: 80%;
+    width: 105%;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+}
+
+.button-black:hover::before,
+.button-white:hover::before
+{
+    transform: scaleY(0)
+}
+
+/*legt eine weiße Box hinter den Text und vor die Border box, die nicht so hoch ist wie die Border box, aber breiter*/
+.button-black:after,
+.button-white:after
+{
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: -3px;
+    bottom: -2px;
+    width: 90%;
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+}
+
+.button-black:hover::after,
+.button-white:hover::after
+{
+    transform: scaleX(0)
+}
+
+.button-black span,
+.button-white span
+{
+    position: relative;
+    z-index: 3 ;    
+}
+
+/*button-white*/
+.button-white
+{
+    border: 2px solid var(--lp-color-black);
+    color: var(--lp-color-black);
+}
+.button-white:before
+{
+    background: var(--lp-color-white);
+}
+
+.button-white:after
+{
+    background: var(--lp-color-white);
+}
+
+/*button-black*/
+.button-black
+{
+    border: 2px solid var(--lp-color-white);
+    color: var(--lp-color-white);
+}
+.button-black:before
+{
+    background: var(--lp-color-black);
+}
+
+.button-black:after
+{
+    background: var(--lp-color-black);
+}
