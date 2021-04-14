@@ -20,6 +20,6 @@ This was my very first project to write a website in vanilla html, js & css with
 
 ## Suggestions from a later point of view
 - Recoloring doesn't need two elements with different hexcodes, but rather just variables which change upon an event
-- Git commit structure is not in a best practice manner
+- Git commit structure is not best practice
 
 #### This is where my Journey began...
